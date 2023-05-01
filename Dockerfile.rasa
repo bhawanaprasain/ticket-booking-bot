@@ -1,0 +1,10 @@
+FROM rasa/rasa:3.2.6
+
+WORKDIR  '/app'
+COPY . /app
+USER root
+
+CMD [ "run","--enable-api","--cors","*","--endpoints", "endpoints.yml"]
+
+
+EXPOSE 5005

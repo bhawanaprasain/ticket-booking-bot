@@ -1,0 +1,8 @@
+FROM rasa/rasa-sdk:3.0.0
+
+WORKDIR /app
+
+# Copy actions folder to working directory
+COPY ./actions /app/actions
+
+CMD ["start", "--actions", "actions"]
