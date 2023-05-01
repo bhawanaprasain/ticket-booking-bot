@@ -1,0 +1,115 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - book_flight
+  - cancel_flight
+  - request_flight_details
+  - booking_details
+  - flight_date
+
+entities:
+  - origin
+  - destination
+  - travel_date
+
+slots:
+  origin:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: origin
+      intent: booking_details
+
+  destination:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: destination
+      intent: booking_details
+  
+
+  travel_date:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: travel_date
+      intent: flight_date
+
+
+responses:
+  utter_greet:
+  - text: "Hey! How are you?"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up: Why did the tomato turn red? Because it saw the airplane ticket prices!"
+  - text : "Here is a joke for you: Why do birds fly south for the winter? Because it's too far to walk, and they can't afford airplane tickets!"
+  - text : "Here is a joke for you: I tried to book a flight to the sun, but they said it was too hot to land. Plus, the ticket prices were out of this world"
+  - text : "Here is a joke for you: Did you hear about the guy who stole a plane ticket? He got a one-way ticket to jail!"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_book_flight:
+  - text: Great, I can definitely help you with that! Where would you like to fly to, and when?
+  - text: Sure, let's get started! Can you tell me your preferred departure and arrival airports, as well as your travel dates?
+  - text: Of course! Do you have a particular airline or flight schedule in mind, or would you like me to suggest some options for you?
+  - text: Absolutely, let's find the perfect flight for your trip! Can you give me some details, such as your preferred travel dates and any budget or itinerary constraints?
+  - text: I'm happy to help you book a flight! Before we get started, can you provide me with some basic information, such as your name and contact details?
+  - text: Let's find you the best flight options! Please tell me your departure and arrival airports, travel dates, and any other preferences or requirements you have.
+  - text: Booking a flight is easy with me! What's your preferred travel itinerary, and do you have any specific budget or time constraints?
+  - text: I'm here to help you book a flight! Can you please provide me with your preferred travel dates and destination, as well as any other relevant details?
+  - text: No problem, booking a flight is what I do best! Just tell me where and when you want to travel, and I'll take care of the rest.
+  - text: Absolutely, let's find you a great flight option! Can you please give me some details about your travel itinerary, such as your departure and arrival cities, travel dates, and any specific preferences or requirements?
+
+  utter_cancel_flight:
+    - text: OK sure! We can cancel your flight
+
+  utter_ask_origin:
+    - text: What's your current location?
+    - text: Please let me know about your current location.
+
+  utter_ask_destination:
+    - text: What's your destination?
+    - text: Please let me know about your destination.
+
+  
+  utter_ask_travel_date:
+    - text: What's your preferred booking date?
+    - text: Please let me know about your booking date.
+
+  utter_submit:
+    - text: Have a safe journey. Your flight from {origin}  to {destination}  has been booked for {travel_date}
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+
+forms:
+  flight_booking_form:
+    required_slots:
+      - origin
+      - destination
+      - travel_date
+
+actions:
+  - action_flight_details
