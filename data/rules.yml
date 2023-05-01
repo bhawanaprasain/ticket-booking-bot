@@ -1,0 +1,53 @@
+version: "3.1"
+
+rules:
+
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say 'I am a bot' anytime the user challenges
+  steps:
+  - intent: bot_challenge
+  - action: utter_iamabot
+
+
+- rule: Activate booking form
+  steps:
+  - intent : book_flight
+  - action: flight_booking_form
+  - active_loop: flight_booking_form
+
+- rule: Submit form
+  condition:
+  - active_loop: flight_booking_form
+  steps:
+  - action: flight_booking_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+
+
+- rule: Cancel user's flight
+  steps:
+  - intent: cancel_flight
+  - action: utter_cancel_flight
+
+
+
+- rule: Ask about flight date
+  steps: 
+  - intent: request_flight_details
+  - action: action_flight_details
+
+# - rule: Ask about flight date
+#   steps: 
+#   - intent: booking_details
+#   - action: utter_ask_travel_date
+
+# - rule: Inform about flight conformation
+#   steps: 
+#   - intent: flight_date
+#   - action: utter_submit

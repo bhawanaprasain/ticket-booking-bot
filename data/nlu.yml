@@ -1,0 +1,196 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: book_flight
+  examples: |
+    - I want to book a flight
+    - Book a flight for me
+    - Can you help me book a flight?
+    - I need to fly somewhere
+    - I'm looking to book a flight
+    - Book a flight
+    - Reserve a flight
+    - How can I book a flight?
+    - Can you book a flight for me?
+    - Let's book a flight
+    - I need to fly somewhere
+    - I'm looking to book a flight
+    - Book a flight
+    - Reserve a flight
+    - How can I book a flight?
+    - Can you book a flight for me?
+    - Let's book a flight
+    - I want to fly to a new destination
+    - Please book a flight for me
+    - I'm planning a trip and need to book a flight
+    - Let's book my flight together
+    - Can you assist me with booking a flight?
+    - I need to make a flight reservation
+    - I'm interested in booking a flight
+    - I'm ready to book my flight
+    - How do I go about booking a flight?
+    - I'd like to book a flight for my upcoming vacation
+
+
+- intent: cancel_flight
+  examples: |
+    - Can I cancel my flight?
+    - I need to cancel my flight
+    - How can I cancel my flight?
+    - What's the process to cancel my flight?
+    - I want to cancel my flight booking
+    - Is it possible to get a refund for my flight?
+    - Can I get a refund if I cancel my flight?
+    - I've decided not to take the flight, can I cancel it?
+    - I won't be able to make it for the flight, can I cancel it?
+    - Please cancel my flight
+    - I want to cancel my booking for the flight to [New York](destination) on [June 15th](travel_date)
+    - I need to cancel my flight from [London](origin) to [Sydney](destination) on [August 25th](travel_date)
+
+- intent: request_flight_details
+  examples: |
+    - What time does my flight depart?
+    - When is my flight scheduled to arrive?
+    - Can you tell me the duration of my flight?
+    - How long is the flight to [New York](destination)?
+    - What is the flight number for my trip to [Paris](destination)?
+    - What is the price of the flight to [Los Angeles](destination) on [July 20th](travel_date)?
+    - Can you give me information about the flight from [London](origin) to [Dubai](destination) on [August 15th](travel_date)?
+    - What is the status of my flight?
+    - Has my flight been delayed?
+    - Can you provide me with the gate number for my flight?
+    - What is the baggage allowance for my flight?
+    - Can you tell me the airline for my flight to [Barcelona](destination)?
+    - What is the seat layout for my flight?
+    - Is Wi-Fi available on my flight?
+    - What are the meal options for my flight?
+    - Can you provide me with the boarding pass for my flight?
+
+- intent: booking_details
+  examples: |
+    - I need to book a flight from [Pokhara](origin) to [Nepalgunj](destination) 
+    - I need to book a flight from [Manthali](origin) to [Lukla](destination)
+    - Currently I am at [Bhaktapur](origin) and want a flight to [Nuwakot](destination)
+    - I want a flight  from [Manthali](origin) to [Lukla](destination)
+    - I was looking for availability of  a flight from from [Surkhet](origin) to [Jiri](destination)
+    - I am at [Balaju](origin)
+    - Need a flight to [Chitwan](destination)
+    - I need to book a flight from [Kathmandu](origin) to [Dolakha](destination)
+    - Right now I am in [Kathmandu](origin)
+    - Can you book a flight for me from [Biratnagar](origin) to [Janakpur](destination)?
+    - I need to fly from [Tribhuvan International Airport](origin) to [Bhairahawa Airport](destination).
+    - Can you help me book a flight from [Simara Airport](origin) to [Rajbiraj](destination)?
+    - I want to book a flight from [Tilottama](origin) to [Gorkha](destination).
+    - Could you help me find a flight from [Bharatpur](origin) to [Jomsom](destination)?
+    - I need a flight from [Bhairawa Airport](origin) to [Tumlingtar Airport](destination).
+    - I'm looking for a flight from [Janakpur](origin) to [Lukla](destination).
+    - Can you book me a flight from [Ramechhap](origin) to [Phaplu Airport](destination)?
+    - I need a flight from [Dhangadhi](origin) to [Bhadrapur Airport](destination).
+    - Could you help me find a flight from [Nepalgunj Airport](origin) to [Tribhuvan International Airport](destination)?```
+
+
+- intent: flight_date
+  examples: |
+    - I would like to have flight scheduled for [2nd of June](travel_date)
+    - I want the flight to be booked for [5th of May](travel_date)
+    - I want it to be booked for [7th of December](travel_date)
+    - Can you find me a flight on [August 23rd](travel_date)?
+    - I need to book a flight for [October 10th](travel_date).
+    - Any flights  available on [July 6th](travel_date)?
+    - I want to travel on [September 15th](travel_date).
+    - Can you help me book a flight for [December 25th](travel_date)?
+    - I'm looking for a flight on [May 12th](travel_date).
+    - Can I book a flight for [November 1st](travel_date)?
+    - The earliest flight you have on [June 30th](travel_date)
+    - Do you have any flights on [April 8th](travel_date)?
+    - Could you check if there are any flights available on [February 14th](travel_date)?```
+
