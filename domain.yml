@@ -84,18 +84,25 @@ responses:
     - text: OK sure! We can cancel your flight
 
   utter_ask_origin:
-    - text: What's your current location?
-    - text: Please let me know about your current location.
+    - text: Let's start with your current location. Where are you currently located?
+    - text: I'm here to help! Can you please tell me your current location so I can help you book your ticket?
+    - text: Of course! Before we proceed, can you please tell me where you are right now so I can find the best ticket options for you?
+    - text: Thanks for choosing our ticket booking system! To get started, please let me know where you are located.
 
   utter_ask_destination:
-    - text: What's your destination?
+    - text: I need to know your destination to assist you better.
     - text: Please let me know about your destination.
+    - text: What is your preferred destination?
+    - text: May I know where you would like to travel to?
 
   
   utter_ask_travel_date:
-    - text: What's your preferred booking date?
-    - text: Please let me know about your booking date.
-
+    - text: What date would you like to book your tickets for?
+    - text: Could you please provide me with your preferred travel date?
+    - text: Please let me know the date you want to book your tickets for.
+    - text: What's your preferred date of travel?
+    - text: I can help you book your tickets. When would you like to travel?
+    
   utter_submit:
     - text: Have a safe journey. Your flight from {origin}  to {destination}  has been booked for {travel_date}
     
